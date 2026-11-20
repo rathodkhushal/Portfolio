@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khushal Rathod | BCA Final Year Student &amp; Digital Productivity Specialist</title>
+    <meta name="description" content="Executive portfolio of Khushal Rathod, a Final Year BCA student from Bhavnagar, Gujarat specializing in Canva Visual Design, MS Office Analytics, AI Productivity, and Professional Communication.">
+
+    <!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        void: '#050811',
+                        obsidian: '#090E1A',
+                        brandIndigo: '#6366F1',
+                        brandCyan: '#38BDF8',
+                        brandViolet: '#8B5CF6',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* ==========================================================================
+           BASE THEME & MULTI-LAYERED ANIMATED BACKGROUND
+           ========================================================================== */
+        :root {
+            --bg-void: #050811;
+            --bg-obsidian: #090E1A;
+            --accent-indigo: #6366F1;
+            --accent-cyan: #38BDF8;
+        }
+
+        html, body {
+            background-color: #050811;
+            color: #E2E8F0;
+            overflow-x: hidden;
+        }
+
+        /* Layer 1: Ambient Aurora Orbs (slow-drifting CSS keyframes) */
+        .aurora-layer {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 0%, #0D1528 0%, #050811 72%);
+        }
+
+        .aurora-orb {
+            position: absolute;
+            border-radius: 9999px;
+            filter: blur(110px);
+            opacity: 0.32;
+            will-change: transform;
+        }
+
+        .orb-indigo {
+            width: 46vw;
+            height: 46vw;
+            max-width: 680px;
+            max-height: 680px;
+            top: -12%;
+            left: -8%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.72) 0%, rgba(99, 102, 241, 0) 70%);
+            animation: driftIndigo 24s ease-in-out infinite alternate;
+        }
+
+        .orb-cyan {
+            width: 42vw;
+            height: 42vw;
+            max-width: 620px;
+            max-height: 620px;
+            top: 28%;
+            right: -10%;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.58) 0%, rgba(56, 189, 248, 0) 70%);
+            animation: driftCyan 28s ease-in-out infinite alternate;
+        }
+
+        .orb-violet {
+            width: 38vw;
+            height: 38vw;
+            max-width: 560px;
+            max-height: 560px;
+            bottom: -14%;
+            left: 26%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.45) 0%, rgba(139, 92, 246, 0) 70%);
+            animation: driftViolet 32s ease-in-out infinite alternate;
+        }
+
+        @keyframes driftIndigo {
+            0%   { transform: translate3d(0, 0, 0) scale(1); }
+            50%  { transform: translate3d(8vw, 6vh, 0) scale(1.1); }
+            100% { transform: translate3d(3vw, 12vh, 0) scale(0.95); }
+        }
+
+        @keyframes driftCyan {
+            0%   { transform: translate3d(0, 0, 0) scale(1); }
+            50%  { transform: translate3d(-9vw, -5vh, 0) scale(1.12); }
+            100% { transform: translate3d(-4vw, 8vh, 0) scale(0.96); }
+        }
+
+        @keyframes driftViolet {
+            0%   { transform: translate3d(0, 0, 0) scale(1); }
+            50%  { transform: translate3d(6vw, -8vh, 0) scale(1.08); }
+            100% { transform: translate3d(-6vw, -3vh, 0) scale(0.95); }
+        }
+
+        /* Layer 2: Faint Architectural Dot-Grid + Radial Vignette */
+        .bg-grid-vignette {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            background-image:
+                radial-gradient(rgba(148, 163, 184, 0.14) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, transparent 30%, rgba(5, 8, 17, 0.78) 100%);
+            background-size: 30px 30px, 100% 100%;
+        }
+
+        /* Layer 3: Interactive Constellation / Neural Particle Canvas */
+        #bg-canvas {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+            display: block;
+        }
+
+        /* Foreground Wrapper */
+        .app-shell {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* ==========================================================================
+           PREMIUM GLASSMORPHISM & MOUSE-TRACKING SPOTLIGHT
+           ========================================================================== */
+        .glass-card {
+            position: relative;
+            background: rgba(15, 23, 42, 0.58);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow:
+                0 20px 50px -24px rgba(0, 0, 0, 0.7),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.09);
+            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(148, 163, 184, 0.22);
+        }
+
+        /* Mouse-tracking spotlight glow overlay */
+        .spotlight-card {
+            --mouse-x: 50%;
+            --mouse-y: 50%;
+            overflow: hidden;
+        }
+
+        .spotlight-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            background: radial-gradient(
+                420px circle at var(--mouse-x) var(--mouse-y),
+                rgba(99, 102, 241, 0.16),
+                rgba(56, 189, 248, 0.07) 40%,
+                transparent 72%
+            );
+            z-index: 0;
+        }
+
+        .spotlight-card:hover::before {
+            opacity: 1;
+        }
+
+        .spotlight-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Floating Glass Navbar */
+        .glass-nav {
+            background: rgba(9, 14, 26, 0.68);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.65);
+        }
+
+        /* Reading Progress Bar */
+        #reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2.5px;
+            width: 0%;
+            z-index: 60;
+            background: linear-gradient(90deg, #6366F1, #38BDF8, #8B5CF6);
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.7);
+            transition: width 0.08s linear;
+        }
+
+        /* ==========================================================================
+           HERO MICRO-ANIMATIONS (RING, LEVITATION, CURSOR, 3D TILT)
+           ========================================================================== */
+        .typing-cursor {
+            display: inline-block;
+            width: 2.5px;
+            height: 1.15em;
+            background: #38BDF8;
+            vertical-align: middle;
+            margin-left: 4px;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+            animation: blinkCursor 0.95s step-end infinite;
+        }
+
+        @keyframes blinkCursor {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Rotating conic gradient ring around KR monogram */
+        .ring-spinner {
+            background: conic-gradient(from 0deg, #6366F1, #38BDF8, #8B5CF6, #6366F1);
+            animation: spinRing 7s linear infinite;
+        }
+
+        @keyframes spinRing {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Gentle levitating micro-badges */
+        .levitate-1 { animation: levitate 4.6s ease-in-out infinite; }
+        .levitate-2 { animation: levitate 5.4s ease-in-out 0.8s infinite; }
+        .levitate-3 { animation: levitate 6.0s ease-in-out 1.4s infinite; }
+
+        @keyframes levitate {
+            0%, 100% { transform: translateY(0px); }
+            50%      { transform: translateY(-7px); }
+        }
+
+        /* 3D Tilt Wrapper */
+        .tilt-stage {
+            perspective: 1100px;
+        }
+
+        #tilt-card {
+            transform-style: preserve-3d;
+            transition: transform 0.18s ease-out, border-color 0.3s ease;
+            will-change: transform;
+        }
+
+        /* Primary CTA Subtle Glow */
+        .cta-glow {
+            box-shadow: 0 0 24px -4px rgba(99, 102, 241, 0.55);
+        }
+        .cta-glow:hover {
+            box-shadow: 0 0 32px -2px rgba(56, 189, 248, 0.65);
+        }
+
+        /* Scroll-Reveal Staggered Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 80ms; }
+        .reveal-delay-2 { transition-delay: 160ms; }
+        .reveal-delay-3 { transition-delay: 240ms; }
+
+        /* Skill Progress Bar Fill */
+        .skill-bar-fill {
+            width: 0%;
+            transition: width 1.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Modal smooth open/close */
+        .modal-backdrop {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+        .modal-backdrop.is-open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-panel {
+            transform: translateY(16px) scale(0.97);
+            transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .modal-backdrop.is-open .modal-panel {
+            transform: translateY(0) scale(1);
+        }
+
+        /* Custom sleek scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050811; }
+        ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brandIndigo/40 selection:text-white">
+
+    <!-- ==================== READING PROGRESS BAR ==================== -->
+    <div id="reading-progress" aria-hidden="true"></div>
+
+    <!-- ==================== MULTI-LAYERED ANIMATED BACKGROUND ==================== -->
+    <div class="aurora-layer" aria-hidden="true">
+        <div class="aurora-orb orb-indigo"></div>
+        <div class="aurora-orb orb-cyan"></div>
+        <div class="aurora-orb orb-violet"></div>
+    </div>
+    <div class="bg-grid-vignette" aria-hidden="true"></div>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <!-- ==================== MAIN APPLICATION SHELL ==================== -->
+    <div class="app-shell">
+
+        <!-- ==================== 1. FLOATING GLASS NAVBAR ==================== -->
+        <header class="fixed top-3 sm:top-4 left-0 right-0 z-50 px-3 sm:px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="glass-nav rounded-2xl px-4 sm:px-6 h-16 flex items-center justify-between">
+                    <!-- Brand Monogram -->
+                    <a href="#home" class="flex items-center gap-3 group focus:outline-none">
+                        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-brandIndigo/25 to-brandCyan/20 border border-white/15 flex items-center justify-center group-hover:border-brandCyan/50 transition-colors">
+                            <span class="font-display font-extrabold text-sm tracking-tight text-white">KR<span class="text-brandCyan">.</span></span>
+                        </div>
+                        <div class="hidden sm:block leading-tight">
+                            <span class="block font-display font-bold text-sm text-white tracking-tight">Khushal Rathod</span>
+                            <span class="block font-mono text-[10px] text-slate-400 uppercase tracking-widest">Portfolio &bull; 2026</span>
+                        </div>
+                    </a>
+
+                    <!-- Desktop Links with Scroll-Spy -->
+                    <nav class="hidden md:flex items-center gap-1" aria-label="Primary Navigation">
+                        <a href="#about" data-nav="about" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-white/[0.05] transition-all">About</a>
+                        <a href="#skills" data-nav="skills" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-white/[0.05] transition-all">Skills</a>
+                        <a href="#projects" data-nav="projects" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-white/[0.05] transition-all">Projects</a>
+                        <a href="#education" data-nav="education" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-white/[0.05] transition-all">Education</a>
+                        <a href="#contact" data-nav="contact" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-white/[0.05] transition-all">Contact</a>
+                    </nav>
+
+                    <!-- Desktop CTA & Mobile Menu Toggle -->
+                    <div class="flex items-center gap-2.5">
+                        <a href="#contact" class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-brandIndigo to-indigo-500 hover:from-indigo-500 hover:to-brandCyan transition-all shadow-md">
+                            <span>Let's Connect</span>
+                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
+                        </a>
+
+                        <button id="mobile-menu-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" class="md:hidden p-2.5 rounded-xl text-slate-300 hover:text-white bg-white/[0.04] hover:bg-white/10 border border-white/10 transition-colors">
+                            <svg id="icon-open" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                            <svg id="icon-close" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sleek Mobile Slide-Down Menu -->
+                <div id="mobile-menu" class="hidden md:hidden mt-2 glass-nav rounded-2xl p-3 space-y-1">
+                    <a href="#about" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.06] transition-colors">About</a>
+                    <a href="#skills" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.06] transition-colors">Skills</a>
+                    <a href="#projects" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.06] transition-colors">Projects</a>
+                    <a href="#education" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.06] transition-colors">Education</a>
+                    <a href="#contact" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/[0.06] transition-colors">Contact</a>
+                    <div class="pt-2">
+                        <a href="#contact" class="mobile-nav-link block w-full text-center px-4 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-brandIndigo to-brandCyan">
+                            Get in Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- ==================== 2. EXECUTIVE HERO SECTION ==================== -->
+            <section id="home" class="relative pt-32 pb-20 sm:pt-40 sm:pb-28">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+
+                        <!-- Left Column: Asymmetric Executive Intro -->
+                        <div class="lg:col-span-7">
+                            <!-- Pulsing Green-Dot Status Pill -->
+                            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full glass-card mb-6">
+                                <span class="relative flex h-2.5 w-2.5">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+                                </span>
+                                <span class="font-mono text-xs text-slate-200 tracking-wide">Available for Internships &amp; Freelance Projects</span>
+                            </div>
+
+                            <!-- Bold Gradient Display Heading -->
+                            <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.08] mb-4">
+                                <span class="bg-gradient-to-r from-white via-slate-100 to-brandCyan bg-clip-text text-transparent">
+                                    KHUSHAL RATHOD
+                                </span>
+                            </h1>
+
+                            <!-- Smooth JS Typing Animation -->
+                            <div class="min-h-[2.25rem] sm:min-h-[2.75rem] flex items-center mb-5">
+                                <p class="font-mono text-base sm:text-xl font-medium text-brandCyan">
+                                    <span id="typed-role"></span><span class="typing-cursor" aria-hidden="true"></span>
+                                </p>
+                            </div>
+
+                            <!-- Sharp 2-Line Value Proposition -->
+                            <p class="text-slate-300/90 text-base sm:text-lg leading-relaxed max-w-xl mb-8">
+                                Final-year BCA student in Bhavnagar bridging visual storytelling, structured MS Office analytics, and AI-driven workflows to deliver clear, high-impact digital outcomes.
+                            </p>
+
+                            <!-- Primary & Secondary CTAs -->
+                            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-10">
+                                <a href="#projects" class="cta-glow inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-brandIndigo to-brandCyan hover:opacity-95 transition-all">
+                                    <span>View Selected Work</span>
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                    </svg>
+                                </a>
+                                <a href="#contact" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-slate-200 glass-card hover:bg-white/[0.08] hover:text-white transition-all">
+                                    <svg class="w-4 h-4 text-brandCyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                                    </svg>
+                                    <span>Get in Touch</span>
+                                </a>
+                            </div>
+
+                            <!-- Compact Executive Stats Bar -->
+                            <div class="grid grid-cols-3 gap-3 sm:gap-4 max-w-lg">
+                                <div class="glass-card rounded-xl px-3.5 py-3">
+                                    <p class="font-display font-bold text-lg sm:text-xl text-white">7.775</p>
+                                    <p class="font-mono text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">BCA CGPA</p>
+                                </div>
+                                <div class="glass-card rounded-xl px-3.5 py-3">
+                                    <p class="font-display font-bold text-lg sm:text-xl text-brandCyan">3+</p>
+                                    <p class="font-mono text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Featured Projects</p>
+                                </div>
+                                <div class="glass-card rounded-xl px-3.5 py-3">
+                                    <p class="font-display font-bold text-lg sm:text-xl text-white truncate">Bhavnagar</p>
+                                    <p class="font-mono text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">Gujarat, IN</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Interactive 3D-Tilt Executive Profile Card -->
+                        <div class="lg:col-span-5 flex justify-center lg:justify-end">
+                            <div class="tilt-stage relative w-full max-w-md py-4">
+                                <!-- Floating Micro-Badge 1 (Top Right) -->
+                                <div class="levitate-1 hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full glass-card border border-brandCyan/30 absolute -top-1 -right-3 z-20 shadow-lg">
+                                    <span class="w-2 h-2 rounded-full bg-brandCyan"></span>
+                                    <span class="font-mono text-xs text-slate-100">AI Tools</span>
+                                </div>
+
+                                <!-- Floating Micro-Badge 2 (Mid Left) -->
+                                <div class="levitate-2 hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full glass-card border border-brandIndigo/35 absolute top-1/2 -left-5 z-20 shadow-lg">
+                                    <span class="w-2 h-2 rounded-full bg-brandIndigo"></span>
+                                    <span class="font-mono text-xs text-slate-100">Canva Pro</span>
+                                </div>
+
+                                <!-- Floating Micro-Badge 3 (Bottom Right) -->
+                                <div class="levitate-3 hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full glass-card border border-brandViolet/35 absolute -bottom-1 right-6 z-20 shadow-lg">
+                                    <span class="w-2 h-2 rounded-full bg-brandViolet"></span>
+                                    <span class="font-mono text-xs text-slate-100">MS Office</span>
+                                </div>
+
+                                <!-- 3D Tilt Glassmorphic Card -->
+                                <div id="tilt-card" class="glass-card spotlight-card rounded-3xl p-7 sm:p-8">
+                                    <!-- Top Specular Line -->
+                                    <div class="absolute top-0 left-8 right-8 h-[1.5px] bg-gradient-to-r from-transparent via-brandCyan/70 to-transparent"></div>
+
+                                    <!-- Card Meta Header -->
+                                    <div class="flex items-center justify-between mb-7">
+                                        <span class="font-mono text-[11px] uppercase tracking-widest text-slate-400">Executive Profile</span>
+                                        <span class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-brandIndigo/20 text-indigo-200 border border-brandIndigo/30">
+                                            Final Year BCA
+                                        </span>
+                                    </div>
+
+                                    <!-- Animated Rotating Gradient Ring + Crisp KR Monogram -->
+                                    <div class="flex flex-col items-center text-center mb-6">
+                                        <div class="relative w-28 h-28 mb-5 flex items-center justify-center">
+                                            <div class="ring-spinner absolute inset-0 rounded-full p-[2.5px]">
+                                                <div class="w-full h-full rounded-full bg-obsidian"></div>
+                                            </div>
+                                            <div class="relative w-[96px] h-[96px] rounded-full bg-gradient-to-br from-slate-900 to-void border border-white/10 flex items-center justify-center shadow-inner">
+                                                <span class="font-display font-extrabold text-3xl tracking-tight bg-gradient-to-br from-white via-slate-100 to-brandCyan bg-clip-text text-transparent">KR</span>
+                                            </div>
+                                        </div>
+
+                                        <h2 class="font-display font-bold text-2xl text-white tracking-tight">Khushal Rathod</h2>
+                                        <p class="text-sm text-brandCyan font-medium mt-1">Digital Productivity &amp; Visual Design</p>
+
+                                        <!-- Location Badge -->
+                                        <div class="inline-flex items-center gap-1.5 mt-3 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 text-xs text-slate-300">
+                                            <svg class="w-3.5 h-3.5 text-brandCyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                                            </svg>
+                                            <span>Bhavnagar, Gujarat</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-t border-white/[0.08] my-5"></div>
+
+                                    <!-- Mobile-visible micro-badges + Quick Specs -->
+                                    <div class="grid grid-cols-3 gap-2 text-center">
+                                        <div class="rounded-xl bg-white/[0.03] border border-white/[0.06] py-2.5 px-2">
+                                            <span class="block font-mono text-[10px] text-slate-400 uppercase">Design</span>
+                                            <span class="block text-xs font-semibold text-white mt-0.5">Canva Pro</span>
+                                        </div>
+                                        <div class="rounded-xl bg-white/[0.03] border border-white/[0.06] py-2.5 px-2">
+                                            <span class="block font-mono text-[10px] text-slate-400 uppercase">Suite</span>
+                                            <span class="block text-xs font-semibold text-white mt-0.5">MS Office</span>
+                                        </div>
+                                        <div class="rounded-xl bg-white/[0.03] border border-white/[0.06] py-2.5 px-2">
+                                            <span class="block font-mono text-[10px] text-slate-400 uppercase">Workflow</span>
+                                            <span class="block text-xs font-semibold text-white mt-0.5">AI Tools</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== 3. ABOUT ME & BENTO PILLARS ==================== -->
+            <section id="about" class="py-20 sm:py-24 border-t border-white/[0.06]">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="mb-12 reveal">
+                        <span class="font-mono text-xs uppercase tracking-widest text-brandCyan">01 / Profile</span>
+                        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mt-2 tracking-tight">About Me</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        <!-- Editorial Overview -->
+                        <div class="lg:col-span-5 glass-card spotlight-card rounded-3xl p-7 sm:p-8 reveal">
+                            <span class="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-indigo-300 bg-brandIndigo/15 border border-brandIndigo/25 px-3 py-1 rounded-lg mb-5">
+                                BCA Candidate &bull; Bhavnagar
+                            </span>
+                            <p class="text-lg font-medium text-white leading-relaxed mb-4">
+                                Blending structured analytical thinking with modern visual design and AI-accelerated workflows.
+                            </p>
+                            <p class="text-sm text-slate-300/90 leading-relaxed mb-4">
+                                I am currently pursuing my final year in the Bachelor of Computer Applications (BCA) program at <span class="text-white font-medium">Shree Swaminarayan College of Computer Science, Bhavnagar</span>, maintaining a strong <span class="text-brandCyan font-mono">7.775 CGPA</span>.
+                            </p>
+                            <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                                My work focuses on turning complex requirements into crisp visual presentations, automated spreadsheet trackers, and streamlined AI-assisted deliverables—always backed by clear, dependable communication.
+                            </p>
+
+                            <div class="pt-5 border-t border-white/[0.08] flex flex-wrap gap-2">
+                                <span class="font-mono text-[11px] px-2.5 py-1 rounded-md bg-white/[0.05] text-slate-300 border border-white/[0.08]">English</span>
+                                <span class="font-mono text-[11px] px-2.5 py-1 rounded-md bg-white/[0.05] text-slate-300 border border-white/[0.08]">Hindi</span>
+                                <span class="font-mono text-[11px] px-2.5 py-1 rounded-md bg-white/[0.05] text-slate-300 border border-white/[0.08]">Gujarati</span>
+                            </div>
+                        </div>
+
+                        <!-- 2x2 Interactive Bento Grid -->
+                        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                            <!-- Pillar 1: Visual Storytelling -->
+                            <div class="glass-card spotlight-card rounded-2xl p-6 reveal reveal-delay-1">
+                                <div class="w-11 h-11 rounded-xl bg-brandIndigo/20 border border-brandIndigo/30 text-indigo-300 flex items-center justify-center mb-4">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+                                    </svg>
+                                </div>
+                                <h3 class="font-display font-bold text-base text-white mb-1.5">Visual Storytelling</h3>
+                                <p class="text-sm text-slate-400 leading-relaxed">
+                                    Designing cohesive brand kits, pitch decks, and social media visuals in Canva with refined hierarchy and polish.
+                                </p>
+                            </div>
+
+                            <!-- Pillar 2: Data & Documentation -->
+                            <div class="glass-card spotlight-card rounded-2xl p-6 reveal reveal-delay-2">
+                                <div class="w-11 h-11 rounded-xl bg-brandCyan/20 border border-brandCyan/30 text-brandCyan flex items-center justify-center mb-4">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                                    </svg>
+                                </div>
+                                <h3 class="font-display font-bold text-base text-white mb-1.5">Data &amp; Documentation</h3>
+                                <p class="text-sm text-slate-400 leading-relaxed">
+                                    Building structured MS Excel dashboards, clean Word reports, and executive PowerPoint presentations built for clarity.
+                                </p>
+                            </div>
+
+                            <!-- Pillar 3: AI-Augmented Execution -->
+                            <div class="glass-card spotlight-card rounded-2xl p-6 reveal reveal-delay-2">
+                                <div class="w-11 h-11 rounded-xl bg-brandViolet/20 border border-brandViolet/30 text-violet-300 flex items-center justify-center mb-4">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" />
+                                    </svg>
+                                </div>
+                                <h3 class="font-display font-bold text-base text-white mb-1.5">AI-Augmented Execution</h3>
+                                <p class="text-sm text-slate-400 leading-relaxed">
+                                    Applying structured prompt engineering and modern AI tools to accelerate research, ideation, and content production.
+                                </p>
+                            </div>
+
+                            <!-- Pillar 4: Clear Communication -->
+                            <div class="glass-card spotlight-card rounded-2xl p-6 reveal reveal-delay-3">
+                                <div class="w-11 h-11 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 flex items-center justify-center mb-4">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                                    </svg>
+                                </div>
+                                <h3 class="font-display font-bold text-base text-white mb-1.5">Clear Communication</h3>
+                                <p class="text-sm text-slate-400 leading-relaxed">
+                                    Delivering articulate presentations, concise technical writing, and proactive collaboration with teams and clients.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== 4. SKILLS & TOOLKIT SECTION ==================== -->
+            <section id="skills" class="py-20 sm:py-24 border-t border-white/[0.06]">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 reveal">
+                        <div>
+                            <span class="font-mono text-xs uppercase tracking-widest text-brandCyan">02 / Capabilities</span>
+                            <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mt-2 tracking-tight">Core Skills &amp; Stack</h2>
+                        </div>
+                        <p class="text-sm text-slate-400 max-w-md">
+                            Measurable proficiency across visual design, Microsoft Office operations, AI workflows, and executive communication.
+                        </p>
+                    </div>
+
+                    <!-- Elevated Glass Panel with Animated Bars & Counting Percentages -->
+                    <div id="skills-panel" class="glass-card spotlight-card rounded-3xl p-6 sm:p-9 mb-8 reveal">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                            <!-- Skill 1: Canva Design (92%) -->
+                            <div class="rounded-2xl bg-void/45 border border-white/[0.07] p-5 sm:p-6">
+                                <div class="flex items-start justify-between gap-4 mb-4">
+                                    <div class="flex items-center gap-3.5">
+                                        <div class="w-10 h-10 rounded-xl bg-brandIndigo/20 border border-brandIndigo/30 text-indigo-300 flex items-center justify-center shrink-0">
+                                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.098 19.902a3.75 3.75 0 005.304 0l6.401-6.402M6.75 21A3.75 3.75 0 013 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 003.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-display font-bold text-base sm:text-lg text-white">Canva Design</h3>
+                                            <p class="font-mono text-[11px] text-slate-400">Visual Systems &amp; Branding</p>
+                                        </div>
+                                    </div>
+                                    <span class="skill-counter font-mono font-semibold text-lg text-brandCyan" data-target="92">0%</span>
+                                </div>
+                                <div class="w-full h-2.5 bg-slate-900/90 rounded-full overflow-hidden border border-white/[0.06] mb-3.5">
+                                    <div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-brandIndigo via-brandCyan to-sky-300" data-width="92%"></div>
+                                </div>
+                                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                                    Brand identities, pitch decks, social media systems, and clean UI visuals.
+                                </p>
+                            </div>
+
+                            <!-- Skill 2: MS Office (90%) -->
+                            <div class="rounded-2xl bg-void/45 border border-white/[0.07] p-5 sm:p-6">
+                                <div class="flex items-start justify-between gap-4 mb-4">
+                                    <div class="flex items-center gap-3.5">
+                                        <div class="w-10 h-10 rounded-xl bg-brandCyan/20 border border-brandCyan/30 text-brandCyan flex items-center justify-center shrink-0">
+                                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h7.5c.621 0 1.125-.504 1.125-1.125m-9.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-7.5A1.125 1.125 0 0112 18.375m9.75-12.75c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125m19.5 0v1.5c0 .621-.504 1.125-1.125 1.125M2.25 5.625v1.5c0 .621.504 1.125 1.125 1.125m0 0h17.25" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-display font-bold text-base sm:text-lg text-white">MS Office</h3>
+                                            <p class="font-mono text-[11px] text-slate-400">Excel, PowerPoint &amp; Word</p>
+                                        </div>
+                                    </div>
+                                    <span class="skill-counter font-mono font-semibold text-lg text-brandCyan" data-target="90">0%</span>
+                                </div>
+                                <div class="w-full h-2.5 bg-slate-900/90 rounded-full overflow-hidden border border-white/[0.06] mb-3.5">
+                                    <div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-brandIndigo via-brandCyan to-sky-300" data-width="90%"></div>
+                                </div>
+                                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                                    Advanced Excel dashboards, executive PowerPoint decks, and structured Word reports.
+                                </p>
+                            </div>
+
+                            <!-- Skill 3: AI Tools (88%) -->
+                            <div class="rounded-2xl bg-void/45 border border-white/[0.07] p-5 sm:p-6">
+                                <div class="flex items-start justify-between gap-4 mb-4">
+                                    <div class="flex items-center gap-3.5">
+                                        <div class="w-10 h-10 rounded-xl bg-brandViolet/20 border border-brandViolet/30 text-violet-300 flex items-center justify-center shrink-0">
+                                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-display font-bold text-base sm:text-lg text-white">AI Tools</h3>
+                                            <p class="font-mono text-[11px] text-slate-400">Prompting &amp; Automation</p>
+                                        </div>
+                                    </div>
+                                    <span class="skill-counter font-mono font-semibold text-lg text-brandCyan" data-target="88">0%</span>
+                                </div>
+                                <div class="w-full h-2.5 bg-slate-900/90 rounded-full overflow-hidden border border-white/[0.06] mb-3.5">
+                                    <div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-brandIndigo via-brandCyan to-sky-300" data-width="88%"></div>
+                                </div>
+                                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                                    Prompt engineering, research automation, content and workflow optimization.
+                                </p>
+                            </div>
+
+                            <!-- Skill 4: Communication (86%) -->
+                            <div class="rounded-2xl bg-void/45 border border-white/[0.07] p-5 sm:p-6">
+                                <div class="flex items-start justify-between gap-4 mb-4">
+                                    <div class="flex items-center gap-3.5">
+                                        <div class="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 flex items-center justify-center shrink-0">
+                                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-display font-bold text-base sm:text-lg text-white">Communication</h3>
+                                            <p class="font-mono text-[11px] text-slate-400">Strategy &amp; Collaboration</p>
+                                        </div>
+                                    </div>
+                                    <span class="skill-counter font-mono font-semibold text-lg text-brandCyan" data-target="86">0%</span>
+                                </div>
+                                <div class="w-full h-2.5 bg-slate-900/90 rounded-full overflow-hidden border border-white/[0.06] mb-3.5">
+                                    <div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-brandIndigo via-brandCyan to-sky-300" data-width="86%"></div>
+                                </div>
+                                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                                    Stakeholder presentations, team coordination, and concise technical writing.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Toolkit & Workflow Stack Tag Cloud -->
+                    <div class="glass-card rounded-2xl p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 reveal">
+                        <div class="shrink-0">
+                            <p class="font-mono text-xs uppercase tracking-widest text-brandCyan">Core Toolkit &amp; Workflow Stack</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3.5 py-1.5 rounded-xl font-mono text-xs text-slate-200 bg-white/[0.05] border border-white/10 hover:border-brandCyan/40 transition-colors">Canva</span>
+                            <span class="px-3.5 py-1.5 rounded-xl font-mono text-xs text-slate-200 bg-white/[0.05] border border-white/10 hover:border-brandCyan/40 transition-colors">MS Excel</span>
+                            <span class="px-3.5 py-1.5 rounded-xl font-mono text-xs text-slate-200 bg-white/[0.05] border border-white/10 hover:border-brandCyan/40 transition-colors">MS PowerPoint</span>
+                            <span class="px-3.5 py-1.5 rounded-xl font-mono text-xs text-slate-200 bg-white/[0.05] border border-white/10 hover:border-brandCyan/40 transition-colors">MS Word</span>
+                            <span class="px-3.5 py-1.5 rounded-xl font-mono text-xs text-slate-200 bg-white/[0.05] border border-white/10 hover:border-brandCyan/40 transition-colors">ChatGPT &amp; Gemini</span>
+                            <span class="px-3.5 py-1.5 rounded-xl font-mono text-xs text-slate-200 bg-white/[0.05] border border-white/10 hover:border-brandCyan/40 transition-colors">Prompt Design</span>
+                            <span class="px-3.5 py-1.5 rounded-xl font-mono text-xs text-slate-200 bg-white/[0.05] border border-white/10 hover:border-brandCyan/40 transition-colors">HTML/CSS/JS</span>
+                            <span class="px-3.5 py-1.5 rounded-xl font-mono text-xs text-slate-200 bg-white/[0.05] border border-white/10 hover:border-brandCyan/40 transition-colors">Presentation Strategy</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== 5. FEATURED PROJECTS SECTION ==================== -->
+            <section id="projects" class="py-20 sm:py-24 border-t border-white/[0.06]">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 reveal">
+                        <div>
+                            <span class="font-mono text-xs uppercase tracking-widest text-brandCyan">03 / Selected Work</span>
+                            <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mt-2 tracking-tight">Featured Projects</h2>
+                        </div>
+                        <p class="text-sm text-slate-400 max-w-md">
+                            Three high-impact initiatives demonstrating visual systems, spreadsheet automation, and AI-enabled content production.
+                        </p>
+                    </div>
+
+                    <!-- 3-Column Agency-Grade Project Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                        <!-- Project 1: Digital Study Hub -->
+                        <article class="glass-card spotlight-card rounded-3xl overflow-hidden flex flex-col justify-between group reveal reveal-delay-1">
+                            <div>
+                                <!-- Detailed Inline SVG UI Preview -->
+                                <div class="h-52 bg-void/90 border-b border-white/[0.08] p-4 relative overflow-hidden">
+                                    <svg class="w-full h-full transition-transform duration-500 group-hover:scale-[1.03]" viewBox="0 0 340 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <rect width="340" height="180" rx="12" fill="#080D1A"/>
+                                        <!-- Top Browser Bar -->
+                                        <rect x="0" y="0" width="340" height="24" rx="12" fill="#0F172A"/>
+                                        <circle cx="16" cy="12" r="3" fill="#64748B"/>
+                                        <circle cx="27" cy="12" r="3" fill="#64748B"/>
+                                        <circle cx="38" cy="12" r="3" fill="#64748B"/>
+                                        <rect x="108" y="8" width="124" height="8" rx="4" fill="#1E293B"/>
+                                        <!-- Left Sidebar -->
+                                        <rect x="12" y="34" width="68" height="134" rx="8" fill="#111C33" stroke="rgba(255,255,255,0.07)"/>
+                                        <rect x="20" y="44" width="52" height="10" rx="4" fill="#6366F1" fill-opacity="0.7"/>
+                                        <rect x="20" y="64" width="44" height="6" rx="3" fill="#334155"/>
+                                        <rect x="20" y="78" width="48" height="6" rx="3" fill="#334155"/>
+                                        <rect x="20" y="92" width="38" height="6" rx="3" fill="#334155"/>
+                                        <rect x="20" y="142" width="52" height="16" rx="6" fill="#38BDF8" fill-opacity="0.2" stroke="#38BDF8" stroke-opacity="0.5"/>
+                                        <!-- Main Campus Portal Header Card -->
+                                        <rect x="90" y="34" width="238" height="54" rx="8" fill="url(#p1grad)" stroke="rgba(99,102,241,0.35)"/>
+                                        <rect x="102" y="46" width="110" height="9" rx="4.5" fill="#F8FAFC"/>
+                                        <rect x="102" y="62" width="150" height="6" rx="3" fill="#94A3B8"/>
+                                        <rect x="274" y="46" width="42" height="26" rx="6" fill="#38BDF8" fill-opacity="0.25" stroke="#38BDF8"/>
+                                        <!-- Module Cards -->
+                                        <rect x="90" y="98" width="114" height="70" rx="8" fill="#111C33" stroke="rgba(255,255,255,0.08)"/>
+                                        <circle cx="108" cy="116" r="8" fill="#6366F1" fill-opacity="0.3" stroke="#6366F1"/>
+                                        <rect x="100" y="132" width="76" height="6" rx="3" fill="#E2E8F0"/>
+                                        <rect x="100" y="144" width="56" height="5" rx="2.5" fill="#475569"/>
+                                        <rect x="214" y="98" width="114" height="70" rx="8" fill="#111C33" stroke="rgba(255,255,255,0.08)"/>
+                                        <circle cx="232" cy="116" r="8" fill="#38BDF8" fill-opacity="0.25" stroke="#38BDF8"/>
+                                        <rect x="224" y="132" width="82" height="6" rx="3" fill="#E2E8F0"/>
+                                        <rect x="224" y="144" width="60" height="5" rx="2.5" fill="#475569"/>
+                                        <defs>
+                                            <linearGradient id="p1grad" x1="90" y1="34" x2="328" y2="88" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#1E1B4B" stop-opacity="0.85"/>
+                                                <stop offset="1" stop-color="#0C4A6E" stop-opacity="0.45"/>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <span class="absolute top-6 left-6 font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-md bg-void/90 text-indigo-300 border border-brandIndigo/35">
+                                        UI/UX &amp; Brand Kit
+                                    </span>
+                                </div>
+
+                                <div class="p-6">
+                                    <h3 class="font-display font-bold text-lg text-white group-hover:text-brandCyan transition-colors mb-2">
+                                        Digital Study Hub — Campus Portal &amp; Visual System
+                                    </h3>
+                                    <p class="text-sm text-slate-400 leading-relaxed">
+                                        Unified academic resource hub and Canva visual identity system streamlining semester notes, notices, and event graphics for BCA students.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="px-6 pb-6">
+                                <div class="flex flex-wrap gap-1.5 mb-5">
+                                    <span class="font-mono text-[11px] px-2.5 py-1 rounded-md bg-white/[0.04] text-slate-300 border border-white/[0.07]">Canva Brand Kit</span>
+                                    <span class="font-mono text-[11px] px-2.5 py-1 rounded-md bg-white/[0.04] text-slate-300 border border-white/[0.07]">UI System</span>
+                                    <span class="font-mono text-[11px] px-2.5 py-1 rounded-md bg-white/[0.04] text-slate-300 border border-white/[0.07]">Workflow</span>
+                                </div>
+                                <button type="button" onclick="openCaseStudy(0)" class="w-full py-2.5 px-4 rounded-xl text-sm font-semibold text-slate-100 bg-white/[0.06] hover:bg-gradient-to-r hover:from-brandIndigo hover:to-brandCyan border border-white/10 hover:border-transparent transition-all flex items-center justify-center gap-2">
+                                    <span>Explore Case Study</span>
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </article>
+
+                        <!-- Project 2: Executive Business & Analytics Dashboard Suite -->
+                        <article class="glass-card spotlight-card rounded-3xl overflow-hidden flex flex-col justify-between group reveal reveal-delay-2">
+                            <div>
+                                <!-- Detailed Inline SVG UI Preview -->
+                                <div class="h-52 bg-void/90 border-b border-white/[0.08] p-4 relative overflow-hidden">
+                                    <svg class="w-full h-full transition-transform duration-500 group-hover:scale-[1.03]" viewBox="0 0 340 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <rect width="340" height="180" rx="12" fill="#080D1A"/>
+                                        <!-- KPI Cards Row -->
+                                        <rect x="14" y="14" width="98" height="44" rx="8" fill="#111C33" stroke="rgba(255,255,255,0.08)"/>
+                                        <rect x="24" y="24" width="40" height="5" rx="2.5" fill="#64748B"/>
+                                        <rect x="24" y="36" width="58" height="10" rx="4" fill="#38BDF8"/>
+                                        <rect x="121" y="14" width="98" height="44" rx="8" fill="#111C33" stroke="rgba(255,255,255,0.08)"/>
+                                        <rect x="131" y="24" width="46" height="5" rx="2.5" fill="#64748B"/>
+                                        <rect x="131" y="36" width="52" height="10" rx="4" fill="#6366F1"/>
+                                        <rect x="228" y="14" width="98" height="44" rx="8" fill="#111C33" stroke="rgba(255,255,255,0.08)"/>
+                                        <rect x="238" y="24" width="42" height="5" rx="2.5" fill="#64748B"/>
+                                        <rect x="238" y="36" width="64" height="10" rx="4" fill="#34D399"/>
+                                        <!-- Main Analytics Chart -->
+                                        <rect x="14" y="68" width="205" height="98" rx="8" fill="#111C33" stroke="rgba(255,255,255,0.08)"/>
+                                        <line x1="26" y1="92" x2="206" y2="92" stroke="rgba(255,255,255,0.05)"/>
+                                        <line x1="26" y1="116" x2="206" y2="116" stroke="rgba(255,255,255,0.05)"/>
+                                        <line x1="26" y1="140" x2="206" y2="140" stroke="rgba(255,255,255,0.05)"/>
+                                        <rect x="34" y="122" width="18" height="32" rx="4" fill="#334155"/>
+                                        <rect x="62" y="106" width="18" height="48" rx="4" fill="#6366F1" fill-opacity="0.75"/>
+                                        <rect x="90" y="114" width="18" height="40" rx="4" fill="#334155"/>
+                                        <rect x="118" y="92" width="18" height="62" rx="4" fill="#38BDF8"/>
+                                        <rect x="146" y="100" width="18" height="54" rx="4" fill="#6366F1"/>
+                                        <rect x="174" y="82" width="18" height="72" rx="4" fill="#38BDF8" fill-opacity="0.9"/>
+                                        <!-- Trend Line Overlay -->
+                                        <path d="M43 116 L71 100 L99 108 L127 86 L155 94 L183 76" stroke="#F8FAFC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <!-- Pivot Table Panel -->
+                                        <rect x="228" y="68" width="98" height="98" rx="8" fill="#111C33" stroke="rgba(255,255,255,0.08)"/>
+                                        <rect x="238" y="80" width="78" height="7" rx="3.5" fill="#6366F1" fill-opacity="0.6"/>
+                                        <rect x="238" y="96" width="66" height="5" rx="2.5" fill="#475569"/>
+                                        <rect x="238" y="110" width="72" height="5" rx="2.5" fill="#334155"/>
+                                        <rect x="238" y="124" width="58" height="5" rx="2.5" fill="#334155"/>
+                                        <rect x="238" y="138" width="74" height="5" rx="2.5" fill="#38BDF8" fill-opacity="0.6"/>
+                                    </svg>
+                                    <span class="absolute top-6 left-6 font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-md bg-void/90 text-brandCyan border border-brandCyan/35">
+                                        MS Excel &amp; PPT
+                                    </span>
+                                </div>
+
+                                <div class="p-6">
+                                    <h3 class="font-display font-bold text-lg text-white group-hover:text-brandCyan transition-colors mb-2">
+                                        Executive Business &amp; Analytics Dashboard Suite
+                                    </h3>
+                                    <p class="text-sm text-slate-400 leading-relaxed">
+                                        Automated Excel pivot dashboard paired with executive PowerPoint reporting templates for real-time KPI, budget, and operations tracking.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="px-6 pb-6">
+                                <div class="flex flex-wrap gap-1.5 mb-5">
+                                    <span class="font-mono text-[11px] px-2.5 py-1 rounded-md bg-white/[0.04] text-slate-300 border border-white/[0.07]">Excel Automation</span>
+                                    <span class="font-mono text-[11px] px-2.5 py-1 rounded-md bg-white/[0.04] text-slate-300 border border-white/[0.07]">Pivot Analytics</span>
+                                    <span class="font-mono text-[11px] px-2.5 py-1 rounded-md bg-white/[0.04] text-slate-300 border border-white/[0.07]">PowerPoint</span>
+                                </div>
+                                <button type="button" onclick="openCaseStudy(1)" class="w-full py-2.5 px-4 rounded-xl text-sm font-semibold text-slate-100 bg-white/[0.06] hover:bg-gradient-to-r hover:from-brandIndigo hover:to-brandCyan border border-white/10 hover:border-transparent transition-all flex items-center justify-center gap-2">
+                                    <span>Explore Case Study</span>
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </article>
+
+                        <!-- Project 3: AI-Powered Content & Social Media Brand Engine -->
+                        <article class="glass-card spotlight-card rounded-3xl overflow-hidden flex flex-col justify-between group reveal reveal-delay-3">
+                            <div>
+                                <!-- Detailed Inline SVG UI Preview -->
+                                <div class="h-52 bg-void/90 border-b border-white/[0.08] p-4 relative overflow-hidden">
+                                    <svg class="w-full h-full transition-transform duration-500 group-hover:scale-[1.03]" viewBox="0 0 340 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <rect width="340" height="180" rx="12" fill="#080D1A"/>
+                                        <!-- Prompt Input Node -->
+                                        <rect x="16" y="54" width="84" height="72" rx="10" fill="#111C33" stroke="#6366F1" stroke-opacity="0.65"/>
+                                        <rect x="26" y="68" width="44" height="6" rx="3" fill="#818CF8"/>
+                                        <rect x="26" y="82" width="62" height="5" rx="2.5" fill="#475569"/>
+                                        <rect x="26" y="94" width="54" height="5" rx="2.5" fill="#475569"/>
+                                        <rect x="26" y="106" width="38" height="8" rx="4" fill="#6366F1" fill-opacity="0.35"/>
+                                        <!-- Connector 1 -->
+                                        <path d="M100 90H128" stroke="#38BDF8" stroke-width="1.8" stroke-dasharray="3 3"/>
+                                        <circle cx="128" cy="90" r="3.5" fill="#38BDF8"/>
+                                        <!-- AI Core Engine Node -->
+                                        <rect x="128" y="34" width="84" height="112" rx="12" fill="#131F3A" stroke="#38BDF8" stroke-opacity="0.7"/>
+                                        <circle cx="170" cy="74" r="18" fill="#38BDF8" fill-opacity="0.14" stroke="#38BDF8" stroke-width="1.5"/>
+                                        <path d="M170 63L173 71L181 74L173 77L170 85L167 77L159 74L167 71L170 63Z" fill="#38BDF8"/>
+                                        <rect x="144" y="104" width="52" height="6" rx="3" fill="#F8FAFC"/>
+                                        <rect x="150" y="116" width="40" height="5" rx="2.5" fill="#64748B"/>
+                                        <rect x="142" y="128" width="56" height="6" rx="3" fill="#6366F1" fill-opacity="0.5"/>
+                                        <!-- Connector 2 -->
+                                        <path d="M212 90H240" stroke="#8B5CF6" stroke-width="1.8" stroke-dasharray="3 3"/>
+                                        <circle cx="240" cy="90" r="3.5" fill="#8B5CF6"/>
+                                        <!-- Output Brand Cards -->
+                                        <rect x="240" y="28" width="84" height="56" rx="8" fill="#111C33" stroke="rgba(255,255,255,0.12)"/>
+                                        <rect x="250" y="38" width="24" height="24" rx="5" fill="#6366F1" fill-opacity="0.35" stroke="#6366F1"/>
+                                        <rect x="280" y="42" width="34" height="5" rx="2.5" fill="#E2E8F0"/>
+                                        <rect x="280" y="52" width="26" height="4" rx="2" fill="#64748B"/>
+                                        <rect x="250" y="68" width="64" height="6" rx="3" fill="#38BDF8" fill-opacity="0.6"/>
+
+                                        <rect x="240" y="96" width="84" height="56" rx="8" fill="#111C33" stroke="rgba(255,255,255,0.12)"/>
+                                        <rect x="250" y="108" width="64" height="6" rx="3" fill="#8B5CF6" fill-opacity="0.7"/>
+                                        <rect x="250" y="120" width="50" height="5" rx="2.5" fill="#475569"/>
+                                        <rect x="250" y="132" width="58" height="5" rx="2.5" fill="#334155"/>
+                                    </svg>
+                                    <span class="absolute top-6 left-6 font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-md bg-void/90 text-violet-300 border border-brandViolet/35">
+                                        AI &amp; Canva Systems
+                                    </span>
+                                </div>
+
+                                <div class="p-6">
+                                    <h3 class="font-display font-bold text-lg text-white group-hover:text-brandCyan transition-colors mb-2">
+                                        AI-Powered Content &amp; Social Media Brand Engine
+                                    </h3>
+                                    <p class="text-sm text-slate-400 leading-relaxed">
+                                        Repeatable AI prompt framework integrated with modular Canva design templates to cut campaign turnaround time by over 55%.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="px-6 pb-6">
+                                <div class="flex flex-wrap gap-1.5 mb-5">
+                                    <span class="font-mono text-[11px] px-2.5 py-1 rounded-md bg-white/[0.04] text-slate-300 border border-white/[0.07]">AI Prompting</span>
+                                    <span class="font-mono text-[11px] px-2.5 py-1 rounded-md bg-white/[0.04] text-slate-300 border border-white/[0.07]">Canva Systems</span>
+                                    <span class="font-mono text-[11px] px-2.5 py-1 rounded-md bg-white/[0.04] text-slate-300 border border-white/[0.07]">Content Strategy</span>
+                                </div>
+                                <button type="button" onclick="openCaseStudy(2)" class="w-full py-2.5 px-4 rounded-xl text-sm font-semibold text-slate-100 bg-white/[0.06] hover:bg-gradient-to-r hover:from-brandIndigo hover:to-brandCyan border border-white/10 hover:border-transparent transition-all flex items-center justify-center gap-2">
+                                    <span>Explore Case Study</span>
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== 6. EDUCATION TIMELINE SECTION ==================== -->
+            <section id="education" class="py-20 sm:py-24 border-t border-white/[0.06]">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="mb-12 reveal">
+                        <span class="font-mono text-xs uppercase tracking-widest text-brandCyan">04 / Academic Journey</span>
+                        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mt-2 tracking-tight">Education &amp; Growth</h2>
+                    </div>
+
+                    <!-- Glowing Vertical Timeline -->
+                    <div class="relative pl-7 sm:pl-10 space-y-7">
+                        <!-- Glowing Gradient Vertical Line -->
+                        <div class="absolute left-[7px] sm:left-[9px] top-3 bottom-3 w-[2px] bg-gradient-to-b from-brandCyan via-brandIndigo to-brandViolet/20" aria-hidden="true"></div>
+
+                        <!-- Milestone 1: BCA -->
+                        <div class="relative reveal">
+                            <span class="absolute -left-[27px] sm:-left-[37px] top-7 w-4 h-4 rounded-full bg-brandCyan ring-4 ring-void shadow-[0_0_16px_rgba(56,189,248,0.85)]"></span>
+                            <div class="glass-card spotlight-card rounded-2xl p-6 sm:p-7">
+                                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                                    <span class="font-mono text-xs px-3 py-1 rounded-lg bg-brandIndigo/20 text-indigo-200 border border-brandIndigo/35">
+                                        Final Year &bull; Pursuing
+                                    </span>
+                                    <span class="font-mono text-xs font-semibold px-3 py-1 rounded-lg bg-brandCyan/15 text-brandCyan border border-brandCyan/30">
+                                        CGPA: 7.775
+                                    </span>
+                                </div>
+                                <h3 class="font-display font-bold text-xl text-white">
+                                    Bachelor of Computer Applications (BCA)
+                                </h3>
+                                <p class="text-sm font-medium text-slate-300 mt-1">
+                                    Shree Swaminarayan College of Computer Science, Bhavnagar
+                                </p>
+                                <p class="text-sm text-slate-400 leading-relaxed mt-3">
+                                    Focused undergraduate training in computer applications, database systems, software fundamentals, and digital productivity, paired with active presentation and academic project leadership.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Milestone 2: HSC -->
+                        <div class="relative reveal reveal-delay-1">
+                            <span class="absolute -left-[27px] sm:-left-[37px] top-7 w-4 h-4 rounded-full bg-brandIndigo ring-4 ring-void shadow-[0_0_14px_rgba(99,102,241,0.75)]"></span>
+                            <div class="glass-card spotlight-card rounded-2xl p-6 sm:p-7">
+                                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                                    <span class="font-mono text-xs px-3 py-1 rounded-lg bg-white/[0.06] text-slate-200 border border-white/10">
+                                        Completed
+                                    </span>
+                                    <span class="font-mono text-xs text-slate-400">
+                                        Bhavnagar, Gujarat
+                                    </span>
+                                </div>
+                                <h3 class="font-display font-bold text-xl text-white">
+                                    Higher Secondary Education (HSC)
+                                </h3>
+                                <p class="text-sm font-medium text-slate-300 mt-1">
+                                    Bhavnagar, Gujarat
+                                </p>
+                                <p class="text-sm text-slate-400 leading-relaxed mt-3">
+                                    Established a strong academic foundation in analytical problem-solving, structured business communication, and foundational computing.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Milestone 3: Applied Certifications & Self-Driven Learning -->
+                        <div class="relative reveal reveal-delay-2">
+                            <span class="absolute -left-[27px] sm:-left-[37px] top-7 w-4 h-4 rounded-full bg-brandViolet ring-4 ring-void shadow-[0_0_14px_rgba(139,92,246,0.75)]"></span>
+                            <div class="glass-card spotlight-card rounded-2xl p-6 sm:p-7">
+                                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                                    <span class="font-mono text-xs px-3 py-1 rounded-lg bg-brandViolet/20 text-violet-200 border border-brandViolet/35">
+                                        Continuous Upskilling
+                                    </span>
+                                    <span class="font-mono text-xs text-slate-400">
+                                        Applied Practice
+                                    </span>
+                                </div>
+                                <h3 class="font-display font-bold text-xl text-white">
+                                    Applied Certifications &amp; Self-Driven Learning
+                                </h3>
+                                <p class="text-sm font-medium text-slate-300 mt-1">
+                                    Visual Design Systems, AI Productivity Workflows &amp; Office Automation
+                                </p>
+                                <p class="text-sm text-slate-400 leading-relaxed mt-3">
+                                    Hands-on mastery of modern Canva design systems, advanced Excel formula &amp; pivot reporting, and structured AI prompting workflows to stay ahead of evolving digital standards.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== 7. CONTACT SECTION ==================== -->
+            <section id="contact" class="py-20 sm:py-24 border-t border-white/[0.06]">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="mb-12 reveal">
+                        <span class="font-mono text-xs uppercase tracking-widest text-brandCyan">05 / Connect</span>
+                        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mt-2 tracking-tight">Let's Work Together</h2>
+                        <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-xl">
+                            Open to internships, collaborative campus or startup projects, and freelance design or office productivity assignments.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        <!-- Left Column: Direct Contact Cards & High-Impact Social Actions -->
+                        <div class="lg:col-span-5 space-y-4 reveal">
+                            <!-- One-Click Copy Email Card -->
+                            <div class="glass-card spotlight-card rounded-2xl p-5 flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-3.5 min-w-0">
+                                    <div class="w-11 h-11 rounded-xl bg-brandIndigo/20 border border-brandIndigo/30 text-indigo-300 flex items-center justify-center shrink-0">
+                                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                                        </svg>
+                                    </div>
+                                    <div class="min-w-0">
+                                        <p class="font-mono text-[10px] uppercase tracking-wider text-slate-400">Email Address</p>
+                                        <p id="email-address" class="text-sm font-medium text-white truncate">rathodkhushal7879@gmail.com</p>
+                                    </div>
+                                </div>
+                                <button id="copy-email-btn" type="button" onclick="copyEmail()" class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-100 bg-white/[0.07] hover:bg-brandIndigo border border-white/10 transition-all shrink-0 flex items-center gap-1.5">
+                                    <svg id="copy-icon" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25" />
+                                    </svg>
+                                    <span id="copy-label">Copy</span>
+                                </button>
+                            </div>
+
+                            <!-- Location Card -->
+                            <div class="glass-card spotlight-card rounded-2xl p-5 flex items-center gap-3.5">
+                                <div class="w-11 h-11 rounded-xl bg-brandCyan/20 border border-brandCyan/30 text-brandCyan flex items-center justify-center shrink-0">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-mono text-[10px] uppercase tracking-wider text-slate-400">Based In</p>
+                                    <p class="text-sm font-medium text-white">Bhavnagar, Gujarat, India</p>
+                                </div>
+                            </div>
+
+                            <!-- Direct Messaging Action Buttons -->
+                            <div class="pt-2 space-y-3">
+                                <p class="font-mono text-[11px] uppercase tracking-widest text-slate-400">Direct Channels</p>
+
+                                <!-- WhatsApp Button (Emerald Glow) -->
+                                <a href="https://wa.me/910000000000?text=Hello%20Khushal%2C%20I%20visited%20your%20portfolio%20and%20would%20love%20to%20connect." target="_blank" rel="noopener noreferrer" class="glass-card rounded-2xl p-4 flex items-center justify-between border border-emerald-500/25 hover:border-emerald-400/60 hover:bg-emerald-500/[0.1] hover:shadow-[0_0_28px_-6px_rgba(16,185,129,0.55)] transition-all group">
+                                    <div class="flex items-center gap-3.5">
+                                        <div class="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-400/30 text-emerald-400 flex items-center justify-center shrink-0">
+                                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                                <path d="M12.031 2C6.504 2 2.008 6.494 2.008 12.02c0 1.766.462 3.49 1.339 5.012L2 22l5.107-1.339a9.97 9.97 0 004.924 1.298h.004c5.524 0 10.018-4.494 10.02-10.02C22.055 6.494 17.558 2 12.031 2zm5.832 14.197c-.248.698-1.444 1.335-2.001 1.418-.512.076-1.178.108-1.901-.121-.44-.14-1.005-.328-1.728-.64-3.04-1.312-5.025-4.374-5.177-4.576-.151-.202-1.236-1.645-1.236-3.137 0-1.493.782-2.226 1.06-2.53.277-.304.605-.38.807-.38.202 0 .404.002.581.011.186.009.436-.071.682.52.248.597.844 2.062.919 2.214.075.151.126.328.025.53-.101.202-.151.328-.303.505-.151.177-.319.395-.455.53-.151.151-.309.316-.133.619.177.304.785 1.296 1.686 2.099 1.158 1.033 2.135 1.353 2.438 1.505.303.151.48.126.656-.076.177-.202.757-.884.959-1.187.202-.304.404-.253.681-.151.278.101 1.766.833 2.069.985.303.151.505.227.581.354.075.126.075.732-.173 1.43z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-white">Chat on WhatsApp</p>
+                                            <p class="text-xs text-slate-400">Fast response for direct inquiries</p>
+                                        </div>
+                                    </div>
+                                    <svg class="w-4 h-4 text-emerald-400/70 group-hover:text-emerald-300 group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                                    </svg>
+                                </a>
+
+                                <!-- Instagram Button (Warm Magenta-Violet Glow) -->
+                                <a href="https://instagram.com/khushalrathod" target="_blank" rel="noopener noreferrer" class="glass-card rounded-2xl p-4 flex items-center justify-between border border-fuchsia-500/25 hover:border-fuchsia-400/60 hover:bg-fuchsia-500/[0.1] hover:shadow-[0_0_28px_-6px_rgba(217,70,239,0.5)] transition-all group">
+                                    <div class="flex items-center gap-3.5">
+                                        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-fuchsia-500/25 to-violet-500/25 border border-fuchsia-400/35 text-fuchsia-300 flex items-center justify-center shrink-0">
+                                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                                                <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/>
+                                                <circle cx="12" cy="12" r="4.25"/>
+                                                <circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-white">Follow on Instagram</p>
+                                            <p class="text-xs text-slate-400">@khushalrathod &bull; Design &amp; updates</p>
+                                        </div>
+                                    </div>
+                                    <svg class="w-4 h-4 text-fuchsia-400/70 group-hover:text-fuchsia-300 group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Glassmorphic Contact Form -->
+                        <div class="lg:col-span-7 glass-card spotlight-card rounded-3xl p-6 sm:p-8 reveal reveal-delay-1">
+                            <h3 class="font-display font-bold text-xl text-white mb-1">Send a Direct Message</h3>
+                            <p class="text-xs text-slate-400 mb-6">Share your project scope, internship opportunity, or inquiry—I respond promptly.</p>
+
+                            <form id="contact-form" novalidate class="space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="name" class="block font-mono text-[11px] uppercase tracking-wider text-slate-400 mb-1.5">Name <span class="text-brandCyan">*</span></label>
+                                        <input type="text" id="name" name="name" required placeholder="Your full name" class="w-full px-4 py-3 rounded-xl bg-void/70 border border-white/10 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brandCyan focus:ring-1 focus:ring-brandCyan transition-colors">
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block font-mono text-[11px] uppercase tracking-wider text-slate-400 mb-1.5">Email <span class="text-brandCyan">*</span></label>
+                                        <input type="email" id="email" name="email" required placeholder="you@company.com" class="w-full px-4 py-3 rounded-xl bg-void/70 border border-white/10 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brandCyan focus:ring-1 focus:ring-brandCyan transition-colors">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="subject" class="block font-mono text-[11px] uppercase tracking-wider text-slate-400 mb-1.5">Subject <span class="text-brandCyan">*</span></label>
+                                    <input type="text" id="subject" name="subject" required placeholder="Internship, Canva design, Excel dashboard, or AI workflow" class="w-full px-4 py-3 rounded-xl bg-void/70 border border-white/10 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brandCyan focus:ring-1 focus:ring-brandCyan transition-colors">
+                                </div>
+
+                                <div>
+                                    <label for="message" class="block font-mono text-[11px] uppercase tracking-wider text-slate-400 mb-1.5">Message <span class="text-brandCyan">*</span></label>
+                                    <textarea id="message" name="message" rows="4" required placeholder="Tell me a little about what you're looking to build or collaborate on..." class="w-full px-4 py-3 rounded-xl bg-void/70 border border-white/10 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brandCyan focus:ring-1 focus:ring-brandCyan transition-colors resize-none"></textarea>
+                                </div>
+
+                                <p id="form-error" class="hidden text-xs text-rose-400 font-medium"></p>
+
+                                <button id="submit-btn" type="submit" class="cta-glow w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-brandIndigo to-brandCyan hover:opacity-95 disabled:opacity-60 transition-all">
+                                    <span id="submit-text">Send Message</span>
+                                    <svg id="submit-icon" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                                    </svg>
+                                    <svg id="submit-spinner" class="w-4 h-4 animate-spin hidden" fill="none" viewBox="0 0 24 24">
+                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ==================== 8. MINIMALIST FOOTER ==================== -->
+        <footer class="border-t border-white/[0.08] bg-void/80 backdrop-blur-md py-10">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-5">
+                <p class="font-mono text-xs text-slate-400">
+                    &copy; 2026 Khushal Rathod &bull; Crafted in Bhavnagar
+                </p>
+
+                <nav class="flex flex-wrap items-center justify-center gap-5 text-xs text-slate-400" aria-label="Footer Navigation">
+                    <a href="#about" class="hover:text-white transition-colors">About</a>
+                    <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                    <a href="#education" class="hover:text-white transition-colors">Education</a>
+                    <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                </nav>
+
+                <button type="button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" aria-label="Back to top" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-medium text-slate-200 glass-card hover:text-white hover:border-brandCyan/40 transition-all">
+                    <span>Back to Top</span>
+                    <svg class="w-3.5 h-3.5 text-brandCyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ==================== INTERACTIVE CASE STUDY MODAL ==================== -->
+    <div id="case-study-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-void/85 backdrop-blur-md">
+        <div class="modal-panel glass-card bg-obsidian/95 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto border border-white/15">
+            <button type="button" onclick="closeCaseStudy()" aria-label="Close case study modal" class="absolute top-5 right-5 w-9 h-9 rounded-xl bg-white/[0.06] hover:bg-white/15 text-slate-300 hover:text-white flex items-center justify-center transition-colors">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <span id="modal-category" class="inline-block font-mono text-xs uppercase tracking-wider px-3 py-1 rounded-lg bg-brandIndigo/20 text-indigo-200 border border-brandIndigo/35 mb-3"></span>
+            <h3 id="modal-title" class="font-display font-bold text-2xl text-white pr-10 mb-5"></h3>
+
+            <div class="space-y-5 text-sm">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="rounded-2xl bg-void/65 border border-white/[0.07] p-4">
+                        <h4 class="font-mono text-[11px] uppercase tracking-wider text-rose-300 mb-1.5">The Challenge</h4>
+                        <p id="modal-challenge" class="text-slate-300 leading-relaxed"></p>
+                    </div>
+                    <div class="rounded-2xl bg-void/65 border border-white/[0.07] p-4">
+                        <h4 class="font-mono text-[11px] uppercase tracking-wider text-brandCyan mb-1.5">The Solution</h4>
+                        <p id="modal-solution" class="text-slate-300 leading-relaxed"></p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-mono text-[11px] uppercase tracking-wider text-slate-400 mb-2.5">Key Deliverables</h4>
+                    <ul id="modal-deliverables" class="space-y-2 text-slate-200"></ul>
+                </div>
+
+                <div>
+                    <h4 class="font-mono text-[11px] uppercase tracking-wider text-slate-400 mb-2">Tools &amp; Stack Used</h4>
+                    <div id="modal-tools" class="flex flex-wrap gap-2"></div>
+                </div>
+            </div>
+
+            <div class="mt-7 pt-5 border-t border-white/[0.08] flex flex-col sm:flex-row justify-end gap-3">
+                <button type="button" onclick="closeCaseStudy()" class="px-5 py-2.5 rounded-xl text-sm font-medium text-slate-300 bg-white/[0.06] hover:bg-white/10 transition-colors">
+                    Close
+                </button>
+                <a href="#contact" onclick="closeCaseStudy()" class="px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-brandIndigo to-brandCyan text-center hover:opacity-95 transition-opacity">
+                    Discuss a Similar Project
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== FLOATING TOAST NOTIFICATION ==================== -->
+    <div id="toast" role="status" aria-live="polite" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="glass-card bg-obsidian/95 border border-brandCyan/35 px-4 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 max-w-sm">
+            <div class="w-8 h-8 rounded-xl bg-brandCyan/20 text-brandCyan flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+            </div>
+            <div>
+                <p id="toast-title" class="text-sm font-semibold text-white">Success</p>
+                <p id="toast-body" class="text-xs text-slate-300">Action completed.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== INTERACTIVE JAVASCRIPT ENGINE ==================== -->
+    <script>
+        /* =========================================================================
+           1. FULL-SCREEN INTERACTIVE CONSTELLATION / NEURAL PARTICLE CANVAS (60fps)
+           ========================================================================= */
+        (function initConstellationCanvas() {
+            const canvas = document.getElementById("bg-canvas");
+            if (!canvas) return;
+            const ctx = canvas.getContext("2d");
+
+            let width = 0;
+            let height = 0;
+            let dpr = Math.min(window.devicePixelRatio || 1, 2);
+            let particles = [];
+            let scrollOffset = 0;
+
+            const mouse = { x: null, y: null, radius: 150 };
+            const colors = ["#6366F1", "#38BDF8", "#818CF8"];
+
+            function resizeCanvas() {
+                width = window.innerWidth;
+                height = window.innerHeight;
+                dpr = Math.min(window.devicePixelRatio || 1, 2);
+                canvas.width = Math.floor(width * dpr);
+                canvas.height = Math.floor(height * dpr);
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                spawnParticles();
+            }
+
+            function spawnParticles() {
+                // Responsive density for smooth 60fps on both mobile and desktop
+                const count = width < 640 ? 34 : width < 1024 ? 54 : 76;
+                particles = [];
+                for (let i = 0; i < count; i++) {
+                    particles.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * 0.42,
+                        vy: (Math.random() - 0.5) * 0.42,
+                        r: Math.random() * 1.6 + 1.0,
+                        color: colors[i % colors.length],
+                        alpha: Math.random() * 0.45 + 0.35
+                    });
+                }
+            }
+
+            window.addEventListener("mousemove", (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            }, { passive: true });
+
+            window.addEventListener("mouseleave", () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+
+            window.addEventListener("scroll", () => {
+                const newScroll = window.scrollY;
+                const delta = (newScroll - scrollOffset) * 0.08;
+                scrollOffset = newScroll;
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].y -= delta;
+                    if (particles[i].y < 0) particles[i].y += height;
+                    if (particles[i].y > height) particles[i].y -= height;
+                }
+            }, { passive: true });
+
+            window.addEventListener("resize", resizeCanvas);
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                const maxDist = width < 640 ? 105 : 135;
+
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    // Soft boundary wrap
+                    if (p.x < -10) p.x = width + 10;
+                    if (p.x > width + 10) p.x = -10;
+                    if (p.y < -10) p.y = height + 10;
+                    if (p.y > height + 10) p.y = -10;
+
+                    // Subtle mouse repulsion/attraction glow
+                    if (mouse.x !== null && mouse.y !== null) {
+                        const dx = mouse.x - p.x;
+                        const dy = mouse.y - p.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < mouse.radius && dist > 0) {
+                            const force = (mouse.radius - dist) / mouse.radius;
+                            p.x -= (dx / dist) * force * 0.65;
+                            p.y -= (dy / dist) * force * 0.65;
+
+                            // Delicate line to cursor
+                            ctx.beginPath();
+                            ctx.strokeStyle = `rgba(56, 189, 248, ${(1 - dist / mouse.radius) * 0.28})`;
+                            ctx.lineWidth = 0.9;
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(mouse.x, mouse.y);
+                            ctx.stroke();
+                        }
+                    }
+
+                    // Draw node
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = p.color;
+                    ctx.globalAlpha = p.alpha;
+                    ctx.fill();
+                    ctx.globalAlpha = 1;
+
+                    // Connect nearby nodes
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const p2 = particles[j];
+                        const dx = p.x - p2.x;
+                        const dy = p.y - p2.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < maxDist) {
+                            const opacity = (1 - dist / maxDist) * 0.22;
+                            ctx.beginPath();
+                            ctx.strokeStyle = `rgba(99, 102, 241, ${opacity})`;
+                            ctx.lineWidth = 0.8;
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                requestAnimationFrame(animate);
+            }
+
+            window.addEventListener("load", () => {
+                resizeCanvas();
+                animate();
+            });
+        })();
+
+        /* =========================================================================
+           2. HERO TYPING ANIMATION
+           ========================================================================= */
+        const roles = [
+            "BCA Final Year Student",
+            "Canva Visual Designer",
+            "AI Productivity Specialist",
+            "MS Office & Workflow Strategist"
+        ];
+        const typedEl = document.getElementById("typed-role");
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function runTyping() {
+            const current = roles[roleIndex];
+            if (isDeleting) {
+                typedEl.textContent = current.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typedEl.textContent = current.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let delay = isDeleting ? 38 : 72;
+            if (!isDeleting && charIndex === current.length) {
+                delay = 1900;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                delay = 320;
+            }
+            setTimeout(runTyping, delay);
+        }
+        document.addEventListener("DOMContentLoaded", () => setTimeout(runTyping, 300));
+
+        /* =========================================================================
+           3. INTERACTIVE 3D-TILT EXECUTIVE PROFILE CARD
+           ========================================================================= */
+        const tiltCard = document.getElementById("tilt-card");
+        if (tiltCard) {
+            tiltCard.addEventListener("mousemove", (e) => {
+                const rect = tiltCard.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const rotateY = ((x / rect.width) - 0.5) * 14;
+                const rotateX = ((y / rect.height) - 0.5) * -14;
+                tiltCard.style.transform = `rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.015, 1.015, 1.015)`;
+            });
+
+            tiltCard.addEventListener("mouseleave", () => {
+                tiltCard.style.transform = "rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+            });
+        }
+
+        /* =========================================================================
+           4. MOUSE-TRACKING SPOTLIGHT GLOW ON ALL GLASS CARDS
+           ========================================================================= */
+        document.querySelectorAll(".spotlight-card").forEach((card) => {
+            card.addEventListener("mousemove", (e) => {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+                card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+            });
+        });
+
+        /* =========================================================================
+           5. READING PROGRESS BAR & ACTIVE NAVBAR SCROLL-SPY
+           ========================================================================= */
+        const progressBar = document.getElementById("reading-progress");
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        function handleScrollUI() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const pct = docHeight > 0 ? Math.min((scrollTop / docHeight) * 100, 100) : 0;
+            progressBar.style.width = `${pct}%`;
+
+            const offset = scrollTop + 160;
+            let activeId = "";
+            sections.forEach((sec) => {
+                if (offset >= sec.offsetTop && offset < sec.offsetTop + sec.offsetHeight) {
+                    activeId = sec.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                const isActive = link.getAttribute("data-nav") === activeId;
+                link.classList.toggle("text-white", isActive);
+                link.classList.toggle("bg-white/[0.08]", isActive);
+                link.classList.toggle("text-slate-400", !isActive);
+            });
+        }
+
+        window.addEventListener("scroll", handleScrollUI, { passive: true });
+        handleScrollUI();
+
+        /* =========================================================================
+           6. MOBILE SLIDE-DOWN NAVIGATION
+           ========================================================================= */
+        const mobileBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const iconOpen = document.getElementById("icon-open");
+        const iconClose = document.getElementById("icon-close");
+
+        function setMobileMenu(open) {
+            mobileMenu.classList.toggle("hidden", !open);
+            iconOpen.classList.toggle("hidden", open);
+            iconClose.classList.toggle("hidden", !open);
+            mobileBtn.setAttribute("aria-expanded", String(open));
+        }
+
+        mobileBtn.addEventListener("click", () => {
+            setMobileMenu(mobileMenu.classList.contains("hidden"));
+        });
+
+        document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+            link.addEventListener("click", () => setMobileMenu(false));
+        });
+
+        /* =========================================================================
+           7. SCROLL-TRIGGERED REVEALS & ANIMATED SKILL BARS + COUNTERS
+           ========================================================================= */
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+        // Animated progress bars + counting percentages
+        const skillsPanel = document.getElementById("skills-panel");
+        let skillsAnimated = false;
+
+        function animateCounter(el, target) {
+            const duration = 1200;
+            const startTime = performance.now();
+            function step(now) {
+                const progress = Math.min((now - startTime) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = `${Math.round(eased * target)}%`;
+                if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+
+        const skillsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting && !skillsAnimated) {
+                    skillsAnimated = true;
+                    document.querySelectorAll(".skill-bar-fill").forEach((bar) => {
+                        bar.style.width = bar.getAttribute("data-width");
+                    });
+                    document.querySelectorAll(".skill-counter").forEach((counter) => {
+                        animateCounter(counter, parseInt(counter.getAttribute("data-target"), 10));
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.25 });
+
+        if (skillsPanel) skillsObserver.observe(skillsPanel);
+
+        /* =========================================================================
+           8. INTERACTIVE CASE STUDY MODAL
+           ========================================================================= */
+        const caseStudies = [
+            {
+                category: "UI/UX & Canva Brand Kit",
+                title: "Digital Study Hub — Campus Portal & Visual System",
+                challenge: "Students struggled with scattered semester notes, inconsistent department event flyers, and unorganized academic schedules across messaging groups.",
+                solution: "Designed a cohesive visual identity and structured campus portal concept in Canva with standardized typography, color tokens, and clean student navigation.",
+                deliverables: [
+                    "Complete Canva Brand Kit including typography hierarchy, color palette, and icon rules.",
+                    "Modular portal UI screens for syllabus tracking, lecture notes, and exam calendars.",
+                    "12+ reusable event announcement and seminar poster templates for rapid campus publishing."
+                ],
+                tools: ["Canva Pro", "UI/UX Wireframing", "Brand Systems", "Academic Workflow"]
+            },
+            {
+                category: "MS Excel & PowerPoint Reporting",
+                title: "Executive Business & Analytics Dashboard Suite",
+                challenge: "Manual spreadsheet tracking for attendance, project budgets, and performance KPIs led to calculation errors and slow weekly status reporting.",
+                solution: "Engineered an automated MS Excel workbook powered by dynamic formulas, pivot tables, and conditional alerts linked to a matching executive PowerPoint deck.",
+                deliverables: [
+                    "Interactive Excel KPI dashboard with pivot analytics and automated variance tracking.",
+                    "Error-checked data entry sheets with dropdown validation and clean formatting.",
+                    "Executive PowerPoint slide deck designed for stakeholder and faculty reviews."
+                ],
+                tools: ["MS Excel", "Pivot Analytics", "MS PowerPoint", "MS Word", "Data Visualization"]
+            },
+            {
+                category: "AI Workflows & Design Systems",
+                title: "AI-Powered Content & Social Media Brand Engine",
+                challenge: "Producing consistent social media campaigns, captions, and visual carousels required repetitive manual drafting and formatting from scratch.",
+                solution: "Built a structured AI prompt library combined with modular Canva layout templates to streamline ideation, copywriting, and visual production into one workflow.",
+                deliverables: [
+                    "Curated prompt templates for audience research, hook generation, and brand-aligned copy.",
+                    "15+ interchangeable Canva carousel, reel cover, and story templates.",
+                    "End-to-end content calendar workflow cutting production time by over 55%."
+                ],
+                tools: ["ChatGPT & Gemini", "Prompt Design", "Canva Pro", "Content Strategy"]
+            }
+        ];
+
+        const modalEl = document.getElementById("case-study-modal");
+
+        function openCaseStudy(idx) {
+            const study = caseStudies[idx];
+            if (!study) return;
+
+            document.getElementById("modal-category").textContent = study.category;
+            document.getElementById("modal-title").textContent = study.title;
+            document.getElementById("modal-challenge").textContent = study.challenge;
+            document.getElementById("modal-solution").textContent = study.solution;
+
+            document.getElementById("modal-deliverables").innerHTML = study.deliverables.map((item) => `
+                <li class="flex items-start gap-2.5">
+                    <svg class="w-4 h-4 text-brandCyan shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>${item}</span>
+                </li>
+            `).join("");
+
+            document.getElementById("modal-tools").innerHTML = study.tools.map((tool) => `
+                <span class="font-mono text-xs px-3 py-1 rounded-lg bg-white/[0.06] text-slate-200 border border-white/10">${tool}</span>
+            `).join("");
+
+            modalEl.classList.add("is-open");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeCaseStudy() {
+            modalEl.classList.remove("is-open");
+            document.body.style.overflow = "";
+        }
+
+        modalEl.addEventListener("click", (e) => {
+            if (e.target === modalEl) closeCaseStudy();
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && modalEl.classList.contains("is-open")) {
+                closeCaseStudy();
+            }
+        });
+
+        /* =========================================================================
+           9. TOAST NOTIFICATION & ONE-CLICK EMAIL COPY
+           ========================================================================= */
+        let toastTimer;
+        function showToast(title, body) {
+            const toast = document.getElementById("toast");
+            document.getElementById("toast-title").textContent = title;
+            document.getElementById("toast-body").textContent = body;
+            toast.classList.remove("translate-y-24", "opacity-0");
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.add("translate-y-24", "opacity-0");
+            }, 3600);
+        }
+
+        function copyEmail() {
+            const email = document.getElementById("email-address").textContent.trim();
+            const btn = document.getElementById("copy-email-btn");
+            const label = document.getElementById("copy-label");
+
+            const helper = document.createElement("textarea");
+            helper.value = email;
+            helper.setAttribute("readonly", "");
+            helper.style.position = "absolute";
+            helper.style.left = "-9999px";
+            document.body.appendChild(helper);
+            helper.select();
+            try {
+                document.execCommand("copy");
+            } catch (err) {
+                // Fallback handled via toast
+            }
+            document.body.removeChild(helper);
+
+            label.textContent = "Copied!";
+            btn.classList.add("bg-emerald-500/25", "border-emerald-400/50", "text-emerald-200");
+            showToast("Email Copied", `${email} copied to clipboard.`);
+
+            setTimeout(() => {
+                label.textContent = "Copy";
+                btn.classList.remove("bg-emerald-500/25", "border-emerald-400/50", "text-emerald-200");
+            }, 2200);
+        }
+
+        /* =========================================================================
+           10. CONTACT FORM VALIDATION & SIMULATED LOADING SUBMISSION
+           ========================================================================= */
+        const contactForm = document.getElementById("contact-form");
+        const formError = document.getElementById("form-error");
+        const submitBtn = document.getElementById("submit-btn");
+        const submitText = document.getElementById("submit-text");
+        const submitIcon = document.getElementById("submit-icon");
+        const submitSpinner = document.getElementById("submit-spinner");
+
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const subject = document.getElementById("subject").value.trim();
+            const message = document.getElementById("message").value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!name || !email || !subject || !message) {
+                formError.textContent = "Please fill in all required fields.";
+                formError.classList.remove("hidden");
+                return;
+            }
+            if (!emailRegex.test(email)) {
+                formError.textContent = "Please enter a valid email address.";
+                formError.classList.remove("hidden");
+                return;
+            }
+
+            formError.classList.add("hidden");
+            submitBtn.disabled = true;
+            submitText.textContent = "Sending...";
+            submitIcon.classList.add("hidden");
+            submitSpinner.classList.remove("hidden");
+
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitText.textContent = "Send Message";
+                submitIcon.classList.remove("hidden");
+                submitSpinner.classList.add("hidden");
+                contactForm.reset();
+                showToast("Message Sent", `Thank you, ${name}. Your message has been received.`);
+            }, 900);
+        });
+    </script>
+</body>
+</html>
